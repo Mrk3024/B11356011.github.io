@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烏龜圖鑑</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #e6f2e6;
+      font-family: "Segoe UI", sans-serif;
+      color: #2f4f2f;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .turtle-card {
+      margin: 20px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f9f9f9;
+      position: relative;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .turtle-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .description {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .description.show {
+      display: block;
+      opacity: 1;
+    }
+    #turtle-cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s linear;
+    }
+    nav {
+      text-align: center;
+      margin: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2a7e5d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+  <nav>
+    <a href="index.html">首頁</a> |
+    <a href="about.html">關於本站</a> |
+    <a href="gallery.html">烏龜圖鑑</a>
+  </nav>
+  <h1 style="text-align: center;">烏龜百科圖鑑</h1>
+
+  <div class="turtle-card">
+    <img src="red_eared_slider.jpg" alt="紅耳龜">
+    <h3>紅耳龜</h3>
+    <button onclick="toggleDescription('desc1')">顯示 / 隱藏介紹</button>
+    <p id="desc1" class="description">紅耳龜是一種常見的寵物龜，原產於美國，因為耳朵附近有紅色條紋而得名。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="galapagos.jpg" alt="加拉巴哥象龜">
+    <h3>加拉巴哥象龜</h3>
+    <button onclick="toggleDescription('desc2')">顯示 / 隱藏介紹</button>
+    <p id="desc2" class="description">加拉巴哥象龜是世界上體型最大的陸龜，壽命可超過 100 年，為瀕危物種。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="leatherback.jpg" alt="革龜">
+    <h3>革龜</h3>
+    <button onclick="toggleDescription('desc3')">顯示 / 隱藏介紹</button>
+    <p id="desc3" class="description">革龜是目前體型最大的海龜，沒有硬殼，而是柔軟革質的背部。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="sulcata.jpg" alt="蘇卡達象龜">
+    <h3>蘇卡達象龜</h3>
+    <button onclick="toggleDescription('desc4')">顯示 / 隱藏介紹</button>
+    <p id="desc4" class="description">蘇卡達象龜是非洲陸龜，個性溫馴，是目前飼養率較高的大型陸龜之一。</p>
+  </div>
+
+  <img src="turtle_cursor.png" id="turtle-cursor" alt="小烏龜">
+
+  <script src="js/script.js"></script>
+</body>
+</html>
